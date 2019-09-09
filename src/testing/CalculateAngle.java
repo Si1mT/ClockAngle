@@ -12,6 +12,18 @@ public class CalculateAngle {
 		if(time.contains(":") && time.length() == 5) {
 			
 			input = time.split(":");
+
+			try {
+				
+				Integer.parseInt(input[0]);
+				Integer.parseInt(input[1]);
+			}
+			catch(NumberFormatException e){
+				
+				System.out.println("Bad input. Accepted formats: hh:mm, hhmm");
+				
+				return false;
+			}
 		}
 		else if(time.matches("[0-9]+") && time.length() == 4) {
 			
